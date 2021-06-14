@@ -1,19 +1,19 @@
 version: '2.1'
 services:
-  mutante:
-    container_name: mutante-meli
-    image: camiloriguer/magneto_meli:latest
-    environment:
-      - HOST=cassandra:9042
-      - KEY_SPACE=meli_keyspace
-      - DATACENTER=datacenter1
-    depends_on:
-      cassandra:
-        condition: service_healthy
-    links:
-      - cassandra
-    ports:
-      - 8080:8080
+#  mutante:
+#    container_name: mutante-meli
+#    image: camiloriguer/magneto_meli:latest
+#    environment:
+#      - HOST=cassandra:9042
+#      - KEY_SPACE=meli_keyspace
+#      - DATACENTER=datacenter1
+#    depends_on:
+#      cassandra:
+#        condition: service_healthy
+#    links:
+#      - cassandra
+#    ports:
+#      - 8080:8080
 
   cassandra:
     container_name: cassandra-meli
@@ -24,6 +24,6 @@ services:
       - ./volumes/cassandra:/var/lib/cassandra
     healthcheck:
       test: [ "CMD", "cqlsh", "-e", "describe keyspaces" ]
-      interval: 5s
+      interval: 10s
       timeout: 5s
       retries: 10

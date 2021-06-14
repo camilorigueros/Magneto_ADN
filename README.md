@@ -48,9 +48,9 @@
 
 ## PUBLICADO EN  AWS EC2
 ### Url nivel 2
- * http://3.135.192.241:8080/mutant
+ * http://18.191.172.251:8080/mutant
 ### Url nivel 3
- * http://3.135.192.241:8080/stats
+ * http://18.191.172.251:8080/stats
 
 ## REPORTE COVERAGE
 
